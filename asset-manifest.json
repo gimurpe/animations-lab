@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/animations-lab/static/css/main.eacd831f.chunk.css",
+    "main.js": "/animations-lab/static/js/main.989eea78.chunk.js",
+    "main.js.map": "/animations-lab/static/js/main.989eea78.chunk.js.map",
+    "runtime-main.js": "/animations-lab/static/js/runtime-main.8de1c711.js",
+    "runtime-main.js.map": "/animations-lab/static/js/runtime-main.8de1c711.js.map",
+    "static/js/2.8eaccd1d.chunk.js": "/animations-lab/static/js/2.8eaccd1d.chunk.js",
+    "static/js/2.8eaccd1d.chunk.js.map": "/animations-lab/static/js/2.8eaccd1d.chunk.js.map",
+    "index.html": "/animations-lab/index.html",
+    "precache-manifest.019ee151b85bf60b24bb33129c280c67.js": "/animations-lab/precache-manifest.019ee151b85bf60b24bb33129c280c67.js",
+    "service-worker.js": "/animations-lab/service-worker.js",
+    "static/css/main.eacd831f.chunk.css.map": "/animations-lab/static/css/main.eacd831f.chunk.css.map",
+    "static/js/2.8eaccd1d.chunk.js.LICENSE.txt": "/animations-lab/static/js/2.8eaccd1d.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/animations-lab/static/media/Roboto-Bold.e07df86c.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8de1c711.js",
+    "static/js/2.8eaccd1d.chunk.js",
+    "static/css/main.eacd831f.chunk.css",
+    "static/js/main.989eea78.chunk.js"
+  ]
+}
