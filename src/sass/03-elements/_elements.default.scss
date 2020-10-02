@@ -1,0 +1,87 @@
+// =========== DEFAULT STYLING FOR ELEMENTS ==============
+
+/* Very important for parallax to work */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  font-size: $default-font-size + px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+picture {
+  font-size: 0;
+}
+
+button {
+  border: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+form {
+  background-color: $white;
+}
+
+select {
+  @include border-radius(0);
+  outline: 0;
+  border: 0;
+}
+
+img {
+  pointer-events: none;
+}
+
+// Removing spiner on numeric inputs
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input {
+  -moz-appearance: textfield;
+}
+
+// Removing IE specific input clear and show
+::-ms-clear {
+  width: 0;
+  height: 0;
+}
+
+::-ms-reveal {
+  width: 0;
+  height: 0;
+}
+
+// Class to remove the position fixed from the header for the sitecore live edit tool
+.sc-editor--header-static {
+  position: static !important;
+}
+
+// Class to remove the padding top from the content wrapper for the sitecore live edit tool
+.sc-editor--no-padding {
+  padding-top: 0 !important;
+}

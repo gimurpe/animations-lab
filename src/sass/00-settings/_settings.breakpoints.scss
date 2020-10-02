@@ -1,0 +1,12 @@
+// ============== BREAKPOINTS =================
+
+// Min-Width Breakpoints
+$xs-breakpoint: 'only screen and (min-width: #{$x-small})';
+$sm-breakpoint: 'only screen and (min-width: #{$small})';
+$md-breakpoint: 'only screen and (min-width: #{$medium})';
+$lg-breakpoint: 'only screen and (min-width: #{$large})';
+$xl-breakpoint: 'only screen and (min-width: #{$x-large})';
+$xxl-breakpoint: 'only screen and (min-width: #{$xx-large})';
+
+// Max-Width Breakpoints
+$md-max-breakpoint: 'only screen and (max-width: #{$medium})';

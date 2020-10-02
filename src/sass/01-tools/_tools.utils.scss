@@ -1,0 +1,100 @@
+// ============== UTILS =================
+
+// TRANSITIONS
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+/*
+ Usage:
+
+    .class {
+        @include transition(color .3s ease);
+    }
+*/
+
+// TRANSFORMS
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+/*
+ Usage
+
+    .class {
+        @include transform(rotate(135deg));
+    }
+*/
+
+// BOX SIZING
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+
+/*
+ Usage
+
+    .class {
+        @include box-sizing(border-box);
+    }
+*/
+
+
+// BORDER RADIUS
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+/*
+ Usage
+
+    .class {
+        @include border-radius(5px);
+    }
+*/
+
+// LINEAR GRADIENT
+@mixin linear-gradient ($start-vpoint, $start-hpoint, $end-vpoint, $start-color, $start-opacity, $end-color, $end-opacity) {
+    background: -moz-linear-gradient($start-vpoint, $start-color $start-opacity, $end-color $end-opacity);
+    background: -webkit-gradient($start-hpoint $start-vpoint, $start-hpoint $end-vpoint, color-stop($start-opacity, $start-color), color-stop($end-opacity, $end-color));
+    background: -webkit-linear-gradient($start-vpoint, $start-color $start-opacity, $end-color $end-opacity);
+    background: -o-linear-gradient($start-vpoint, $start-color $start-opacity, $end-color $end-opacity);
+    background: -ms-linear-gradient($start-vpoint, $start-color $start-opacity, $end-color $end-opacity);
+    background: linear-gradient(to $end-vpoint, $start-color $start-opacity, $end-color $end-opacity);
+}
+
+/*
+ Usage
+
+    .clase {
+        @include linear-gradient(top, left, bottom, $transparent, 0%, $mine-shaft-transparent, 70%);
+    }
+*/
+
+// CALCULATE REM
+// This function returns the font size in rem.
+// Reasons to use rem: https://css-tricks.com/rems-ems/
+@function calculate-rem ($size-value: $default-font-size) {
+    $rem-size: $size-value / $default-font-size;
+    @return #{$rem-size}rem;
+}
+
+/*
+ Usage
+
+    .class {
+        font-size: calculate-rem(12);
+    }
+*/

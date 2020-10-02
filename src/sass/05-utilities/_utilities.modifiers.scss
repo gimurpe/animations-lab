@@ -1,0 +1,29 @@
+// ============ MODIFIERS =============
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.hidden-mobile {
+    display: none !important;
+
+    @include md-breakpoint {
+        display: block !important;
+    }
+}
+
+.visible-mobile {
+    display: block !important;
+
+    @include md-breakpoint {
+        display: none !important;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

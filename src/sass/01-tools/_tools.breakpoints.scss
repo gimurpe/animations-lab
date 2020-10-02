@@ -1,0 +1,49 @@
+// ============== BREAKPOINTS =================
+
+@mixin xs-breakpoint {
+    @media #{$xl-breakpoint} {
+        @content;
+    }
+}
+
+@mixin sm-breakpoint {
+    @media #{$sm-breakpoint} {
+        @content;
+    }
+}
+
+@mixin md-breakpoint {
+    @media #{$md-breakpoint} {
+        @content;
+    }
+}
+
+@mixin lg-breakpoint {
+    @media #{$lg-breakpoint} {
+        @content;
+    }
+}
+
+@mixin xl-breakpoint {
+    @media #{$xl-breakpoint} {
+        @content;
+    }
+}
+
+@mixin xxl-breakpoint {
+    @media #{$xxl-breakpoint} {
+        @content;
+    }
+}
+
+@mixin md-max-breakpoint {
+    @media #{$md-max-breakpoint} {
+        @content;
+    }
+}
+
+@mixin internet-explorer {
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+        @content;
+    }
+}

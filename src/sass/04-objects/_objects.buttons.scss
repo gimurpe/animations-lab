@@ -1,0 +1,92 @@
+// =========== GENERAL BUTTONS ==============
+
+.dr-button {
+    width: 134px;
+    height: 30px;
+    color: $white;
+    border-radius: 15px;
+    font-family: $roboto-bold-family;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: 9px;
+
+    @include md-breakpoint {
+        width: 127px;
+        border-radius: 50px;
+        font-family: $poppins-bold-family;
+        font-size: 12px;
+        line-height: 10px;
+    }
+
+    @include lg-breakpoint {
+        width: 15.4vw;
+        height: 3.02vw;
+        border-radius: 30px;
+        font-family: $roboto-bold-family;
+        font-size: calc(11px + .5vw);
+        letter-spacing: .02vw;
+    }
+
+    @include xxl-breakpoint {
+        width: 300px;
+        height: 60px;
+        font-size: 25px;
+        letter-spacing: .45px;
+    }
+
+    &--filled.dr-button,
+    &--filled .dr-button {
+        background-image: linear-gradient(262deg, $deep-magenta, $amaranth);
+
+        &:hover {
+            background-image: linear-gradient(260deg, $dark-magenta, $cardinal);
+        }
+    }
+
+    &--white-border.dr-button,
+    &--white-border .dr-button {
+        background-color: transparent;
+        border: 2px solid $white;
+
+        &:hover {
+            color: $black-transparent;
+            background-color: $white;
+        }
+    }
+
+    &--gradient-border.dr-button,
+    &--gradient-border .dr-button  {
+        position: relative;
+        color: $lucky-point;
+        background-color: $white;
+        border: solid 2px transparent;
+        background-image: linear-gradient($transparent, $transparent), linear-gradient(101deg, $deep-magenta, $amaranth);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 1000px 1px $white inset;
+
+        &:hover {
+            color: $white;
+            background-color: transparent;
+            background-image: linear-gradient(262deg, $deep-magenta, $amaranth);
+            box-shadow: none;
+        }
+    }
+
+    &--blue-border.dr-button,
+    &--blue-border .dr-button {
+        background-color: $white;
+        border: 2px solid $lucky-point;
+
+        &:hover {
+            position: relative;
+            color: $medium-violet-red;
+            background-color: $white;
+            border: solid 2px transparent;
+            background-image: linear-gradient($transparent, $transparent), linear-gradient(101deg, $deep-magenta, $amaranth);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            box-shadow: 2px 1000px 1px $white inset;
+        }
+    }
+}
