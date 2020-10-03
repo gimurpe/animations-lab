@@ -1,72 +1,9 @@
-@keyframes pulse {
-  0%,
-  20% {
-    transform: rotate(-45deg) scale(1);
-  }
-  30% {
-    transform: rotate(-45deg) scale(1.2);
-  }
-  50% {
-    transform: rotate(-45deg) scale(1);
-  }
-  60% {
-    transform: rotate(-45deg) scale(1.1);
-  }
-  70%,
-  100% {
-    transform: rotate(-45deg) scale(1);
-  }
-}
-
-@keyframes bouncing {
-  0% {
-    bottom: 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    bottom: 50px;
-    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
-  }
-}
-
-@keyframes smoothBouncing {
-  0% {
-    bottom: 0;
-    transform: scale(1, 1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  10% {
-    bottom: 0;
-    transform: scale(1.1, 0.9);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  30% {
-    bottom: 100px;
-    transform: scale(0.9, 1.1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  50% {
-    bottom: 0;
-    transform: scale(1, 1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    bottom: 0;
-    transform: scale(1, 1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-}
-
-@keyframes backgroundSlider {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+export const BOUNCE_1_CSS = `
+&__bouncing-1-btn {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce-1 {
@@ -79,6 +16,13 @@
   100% {
     transform: translateY(0);
   }
+}`;
+export const BOUNCE_2_CSS = `
+&__bouncing-2-btn {
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce-2 {
@@ -91,6 +35,13 @@
   100% {
     transform: translateY(0);
   }
+}`;
+export const BOUNCE_3_CSS = `
+&__bouncing-3-btn {
+  animation-name: bounce-3;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce-3 {
@@ -106,6 +57,13 @@
   100% {
     transform: translateY(0);
   }
+}`;
+export const BOUNCE_4_CSS = `
+&__bouncing-4-btn {
+  animation-name: bounce-4;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce-4 {
@@ -124,6 +82,13 @@
   100% {
     transform: scale(1, 1) translateY(0);
   }
+}`;
+export const BOUNCE_5_CSS = `
+&__bouncing-5-btn {
+  animation-name: bounce-5;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce-5 {
@@ -148,6 +113,13 @@
   100% {
     transform: scale(1, 1) translateY(0);
   }
+}`;
+export const BOUNCE_6_CSS = `
+&__bouncing-6-btn {
+  animation-name: bounce-6;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce-6 {
@@ -172,6 +144,11 @@
   100% {
     transform: scale(1, 1) translateY(0);
   }
+}`;
+export const BOUNCE_7_CSS = `
+&__bouncing-7-btn {
+  animation: bounce-7 2s cubic-bezier(0.28, 0.84, 0.42, 1) 0s infinite
+    alternate none;
 }
 
 @keyframes bounce-7 {
@@ -196,4 +173,4 @@
   100% {
     transform: scale(1, 1) translateY(0);
   }
-}
+}`;
