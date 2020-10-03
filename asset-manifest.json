@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/animations-lab/static/css/main.9789c365.chunk.css",
-    "main.js": "/animations-lab/static/js/main.f5f631ee.chunk.js",
-    "main.js.map": "/animations-lab/static/js/main.f5f631ee.chunk.js.map",
+    "main.css": "/animations-lab/static/css/main.220d6cfe.chunk.css",
+    "main.js": "/animations-lab/static/js/main.66e01528.chunk.js",
+    "main.js.map": "/animations-lab/static/js/main.66e01528.chunk.js.map",
     "runtime-main.js": "/animations-lab/static/js/runtime-main.8de1c711.js",
     "runtime-main.js.map": "/animations-lab/static/js/runtime-main.8de1c711.js.map",
-    "static/js/2.78b55305.chunk.js": "/animations-lab/static/js/2.78b55305.chunk.js",
-    "static/js/2.78b55305.chunk.js.map": "/animations-lab/static/js/2.78b55305.chunk.js.map",
+    "static/js/2.564194b9.chunk.js": "/animations-lab/static/js/2.564194b9.chunk.js",
+    "static/js/2.564194b9.chunk.js.map": "/animations-lab/static/js/2.564194b9.chunk.js.map",
     "index.html": "/animations-lab/index.html",
-    "precache-manifest.3a06437655e148715f6b4431f0220f6e.js": "/animations-lab/precache-manifest.3a06437655e148715f6b4431f0220f6e.js",
+    "precache-manifest.2cc8ed836acb5a43716f88c285ebdb47.js": "/animations-lab/precache-manifest.2cc8ed836acb5a43716f88c285ebdb47.js",
     "service-worker.js": "/animations-lab/service-worker.js",
-    "static/css/main.9789c365.chunk.css.map": "/animations-lab/static/css/main.9789c365.chunk.css.map",
-    "static/js/2.78b55305.chunk.js.LICENSE.txt": "/animations-lab/static/js/2.78b55305.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/animations-lab/static/media/Roboto-Bold.e07df86c.ttf"
+    "static/css/main.220d6cfe.chunk.css.map": "/animations-lab/static/css/main.220d6cfe.chunk.css.map",
+    "static/js/2.564194b9.chunk.js.LICENSE.txt": "/animations-lab/static/js/2.564194b9.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/animations-lab/static/media/Roboto-Bold.e07df86c.ttf",
+    "static/media/fill-mode-chart.png": "/animations-lab/static/media/fill-mode-chart.a7d4cf0a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8de1c711.js",
-    "static/js/2.78b55305.chunk.js",
-    "static/css/main.9789c365.chunk.css",
-    "static/js/main.f5f631ee.chunk.js"
+    "static/js/2.564194b9.chunk.js",
+    "static/css/main.220d6cfe.chunk.css",
+    "static/js/main.66e01528.chunk.js"
   ]
 }
