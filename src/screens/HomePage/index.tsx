@@ -1,11 +1,8 @@
 import React from 'react';
 import './styles.scss';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  docco,
-  atomOneLight,
-} from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import FireFly from '../../components/FireFly';
 
 type Props = {};
 
@@ -18,22 +15,76 @@ const HomePage = () => {
   .loading-button{ animation: bouncing 0.5s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both;}
   `;
 
-  const encodedStr = bouncingBtnHtml.replace(
-    /[\u00A0-\u9999<>\&]/gim,
-    function (i) {
-      return '&#' + i.charCodeAt(0) + ';';
-    }
-  );
+  let fireflies = new Array(15);
+  fireflies = fireflies.fill({}, 0, 15);
+
   return (
     <div className='homepage'>
-      <div className='homepage__bouncing-btn'>Loading</div>
-      <SyntaxHighlighter
-        className='homepage__bouncing-btn-code'
-        language='css'
-        style={atomOneLight}
-      >
-        {bouncingBtnHtml}
-      </SyntaxHighlighter>
+      <section className='homepage__bouncing-section'>
+        <div className='homepage__bouncing-block'>
+          <div className='homepage__bouncing-btn  homepage__bouncing-1-btn'>
+            Bouncing
+          </div>
+          <SyntaxHighlighter
+            className='homepage__bouncing-btn-code'
+            language='css'
+            style={atomOneLight}
+          >
+            {bouncingBtnHtml}
+          </SyntaxHighlighter>
+        </div>
+        <div className='homepage__bouncing-block'>
+          <div className='homepage__bouncing-btn homepage__bouncing-2-btn'>
+            Bouncing
+          </div>
+          <SyntaxHighlighter
+            className='homepage__bouncing-btn-code'
+            language='css'
+            style={atomOneLight}
+          >
+            {bouncingBtnHtml}
+          </SyntaxHighlighter>
+        </div>
+        <div className='homepage__bouncing-block'>
+          <div className='homepage__bouncing-btn homepage__bouncing-3-btn'>
+            Bouncing
+          </div>
+          <SyntaxHighlighter
+            className='homepage__bouncing-btn-code'
+            language='css'
+            style={atomOneLight}
+          >
+            {bouncingBtnHtml}
+          </SyntaxHighlighter>
+        </div>
+        <div className='homepage__bouncing-block'>
+          <div className='homepage__bouncing-btn homepage__bouncing-4-btn'>
+            Bouncing
+          </div>
+          <SyntaxHighlighter
+            className='homepage__bouncing-btn-code'
+            language='css'
+            style={atomOneLight}
+          >
+            {bouncingBtnHtml}
+          </SyntaxHighlighter>
+        </div>
+      </section>
+      <section className='homepage__fireflies-section'>
+        {fireflies.map(() => (
+          <FireFly />
+        ))}
+      </section>
+      <section className='homepage__bouncing-section'>
+        <div className='homepage__bouncing-btn'>Bouncing</div>
+        <SyntaxHighlighter
+          className='homepage__bouncing-btn-code'
+          language='css'
+          style={atomOneLight}
+        >
+          {bouncingBtnHtml}
+        </SyntaxHighlighter>
+      </section>
     </div>
   );
 };
