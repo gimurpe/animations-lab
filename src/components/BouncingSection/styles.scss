@@ -1,0 +1,66 @@
+.bouncing-section {
+  &__bouncing-blocks-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 140px;
+    padding-top: 10%;
+  }
+  &__bouncing-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  &__bouncing-btn {
+    position: relative;
+    background-color: #544865;
+    height: 200px;
+    transform-origin: bottom;
+    width: 200px;
+  }
+  &__bouncing-1-btn {
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  &__bouncing-2-btn {
+    animation-name: bounce-2;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  &__bouncing-3-btn {
+    animation-name: bounce-3;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  &__bouncing-4-btn {
+    animation-name: bounce-4;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  &__bouncing-5-btn {
+    animation-name: bounce-5;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  &__bouncing-6-btn {
+    animation-name: bounce-6;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  &__bouncing-7-btn {
+    animation: bounce-7 2s cubic-bezier(0.28, 0.84, 0.42, 1) 0s infinite
+      alternate none;
+  }
+  &__bouncing-btn-code {
+    font-size: 14px;
+    height: 515px;
+  }
+}
