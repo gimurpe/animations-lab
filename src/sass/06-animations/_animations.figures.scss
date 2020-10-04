@@ -1,3 +1,83 @@
+//= =======================================================================================
+/*                                                                                      *
+ * FIGURE: HEART                                                                        *
+ *                                                                                      */
+//= =======================================================================================
+
+$heart-width: 30px;
+$heart-height: 30px;
+$heart-right: -17px;
+$heart-left: -17px;
+$heart-width-mobile: 20px;
+$heart-height-mobile: 20px;
+$heart-right-mobile: -12px;
+$heart-left-mobile: -12px;
+.heart {
+  position: absolute;
+  display: block;
+  width: $heart-width-mobile;
+  height: $heart-height-mobile;
+  background: #e74c3c;
+  border-radius: 0 0 0 0;
+  transform: rotate(-45deg);
+  animation: pulse 1s infinite;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 20%;
+  @media screen and (min-width: 768px) {
+    bottom: 50px;
+    width: $heart-width;
+    height: $heart-height;
+  }
+}
+.heart::before,
+.heart::after {
+  position: absolute;
+  content: '';
+  width: $heart-width-mobile;
+  height: $heart-height-mobile;
+  background: #e74c3c;
+  border-radius: 50%;
+  @media screen and (min-width: 768px) {
+    width: $heart-width;
+    height: $heart-height;
+  }
+}
+.heart::before {
+  top: $heart-left-mobile;
+  left: 0;
+  @media screen and (min-width: 768px) {
+    top: $heart-left;
+  }
+}
+.heart::after {
+  top: 0;
+  right: $heart-right-mobile;
+  @media screen and (min-width: 768px) {
+    right: $heart-right;
+  }
+}
+@keyframes pulse {
+  0%,
+  20% {
+    transform: rotate(-45deg) scale(1);
+  }
+  30% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1);
+  }
+  60% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+  70%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
 @keyframes pulse {
   0%,
   20% {

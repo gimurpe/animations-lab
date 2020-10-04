@@ -96,29 +96,33 @@ $num-colors: 8;
     height: 300px;
   }
   &__bouncing-section {
-    padding: 5%;
-    padding-top: 10%;
+    padding: 5% 5% 5% 5%;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 600% 600%;
     animation: backgroundSlider 100s ease infinite;
     height: auto;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    column-gap: 10px;
-    row-gap: 140px;
+    display: flex;
+    flex-direction: column;
     .homepage__bouncing-block {
       @for $i from 0 to $num-colors {
         &:nth-child(#{$i}) .homepage__bouncing-btn:hover {
           @include random-bgr();
           cursor: pointer;
           transition: background-color 2s ease-out;
-          animation-name: drift;
-          transform-origin: 50% 50%;
-          animation-duration: 0.6s;
+          // animation-name: drift;
+          // transform-origin: 50% 50%;
+          // animation-duration: 0.6s;
         }
       }
     }
+  }
+  &__bouncing-blocks-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 140px;
+    padding-top: 10%;
   }
   &__bouncing-block {
     display: flex;
@@ -195,6 +199,7 @@ $num-colors: 8;
     overflow: hidden;
     height: 600px;
     position: relative;
+    padding: 5%;
   }
   &__ocean {
     height: 5%;
@@ -203,6 +208,27 @@ $num-colors: 8;
     bottom: 0;
     left: 0;
     background: #015871;
+  }
+  &__ocean-text {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: darkslateblue;
+    animation-name: springy-text;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 15;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+  }
+  &__ocean-anim-direction-concepts {
+    font-size: 20px;
+  }
+  &__ocean-anim-direction-definition {
+    margin-bottom: 10px;
+  }
+  &__ocean-anim-direction-term {
+    margin-bottom: 15px;
   }
   &__wave {
     background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
@@ -220,6 +246,123 @@ $num-colors: 8;
     animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
       swell 7s ease -1.25s infinite;
     opacity: 1;
+  }
+
+  &__painting-section {
+    position: relative;
+    height: 800px;
+    background-color: beige;
+  }
+  &__painting-container {
+    transform: scale(0.9);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  &__painting-d1 {
+    position: absolute;
+    background-image: url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);
+    background-size: 2700px 1500px;
+
+    height: 30vh;
+    width: 15vw;
+
+    background-position: 0 50%;
+
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    animation: dd1 10s infinite, dd12 10s infinite;
+    animation-delay: 1s, 14s;
+  }
+  &__painting-d2 {
+    position: absolute;
+    background-image: url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);
+    background-size: 2700px 1500px;
+
+    height: 50vh;
+    width: 25vw;
+
+    background-position: -10vw 50%;
+    left: 10vw;
+
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: dd2 10s infinite;
+    animation-delay: 1s;
+  }
+  &__painting-d3 {
+    position: absolute;
+    background-image: url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);
+    background-size: 2700px 1500px;
+    overflow: hidden;
+
+    height: 100vh;
+    width: 40vw;
+    left: 25vw;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    background-position: -35vw 50%;
+
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    animation: dd3 10s infinite;
+    animation-delay: 1s;
+  }
+  &__painting-d4 {
+    position: absolute;
+    overflow: hidden;
+    background-image: url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);
+    background-size: 2700px 1500px;
+
+    height: 80vh;
+    width: 25vw;
+    left: 60vw;
+    background-position: -70vw 50%;
+
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: dd4 10s infinite;
+    animation-delay: 1s;
+  }
+
+  &__love-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: plum;
+    .design {
+      z-index: 1;
+    }
+    &__envelop-container {
+      margin-top: 10%;
+    }
+    &__background {
+      position: fixed;
+      height: 100%;
+      @media screen and (min-width: 768px) {
+        height: auto;
+      }
+    }
+    &__balloons-couple {
+      width: 34%;
+      height: 65%;
+      z-index: 2;
+      top: 0;
+      top: 0px;
+      right: 0px;
+      margin: auto;
+      position: absolute;
+      @media screen and (min-width: 768px) {
+        width: 130px;
+        height: 120px;
+      }
+    }
   }
 }
 
@@ -256,49 +399,96 @@ $num-colors: 8;
   }
 }
 
-.section {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  clip: rect(0, auto, auto, 0);
-  .fixed {
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
+@keyframes springy-text {
+  0% {
+    letter-spacing: 1.2em;
+    color: thistle;
   }
-  .white {
-    color: #fff;
+  100% {
+    letter-spacing: 0.1em;
+    color: darkslateblue;
   }
 }
 
-@for $i from 1 through 10 {
-  .section:nth-child(#{$i}) {
-    @if ($i==1) {
-      background-color: #fff;
-      color: #000;
-      top: 0;
-    } @else if($i==10) {
-      background-color: #000;
-      color: #fff;
-      top: (100vh * ($i - 1));
-    } @else {
-      box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
-      background-color: hsl(200deg * $i, 90%, 40%);
-      color: #fff;
-      top: (100vh * ($i - 1));
-    }
-    z-index: ($i);
-    .fixed {
-      transform: translate(-50%, -50%);
-    }
+@keyframes dd1 {
+  0% {
+  }
+  50% {
+    width: 95vw;
+  }
+}
+@keyframes dd12 {
+  0% {
+  }
+  50% {
+    background-position: calc(0vw - 40px) 50%;
+  }
+}
+@keyframes dd2 {
+  0% {
+  }
+  50% {
+    background-position: calc(-10vw - 40px) 50%;
+  }
+}
+@keyframes dd3 {
+  0% {
+  }
+  50% {
+    background-position: calc(-35vw - 40px) 50%;
+  }
+}
+@keyframes dd4 {
+  0% {
+  }
+  50% {
+    background-position: calc(-70vw - 40px) 50%;
   }
 }
 
-.oop {
-  position: relative;
-  z-index: auto;
-  height: 10px;
-  background: linear-gradient(141deg, #48ded4 0%, #a026bf 51%, #e82c75 75%);
-}
+// .section {
+//   position: absolute;
+//   width: 100%;
+//   height: 100vh;
+//   overflow: hidden;
+//   clip: rect(0, auto, auto, 0);
+//   .fixed {
+//     overflow: hidden;
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//   }
+//   .white {
+//     color: #fff;
+//   }
+// }
+
+// @for $i from 1 through 10 {
+//   .section:nth-child(#{$i}) {
+//     @if ($i==1) {
+//       background-color: #fff;
+//       color: #000;
+//       top: 0;
+//     } @else if($i==10) {
+//       background-color: #000;
+//       color: #fff;
+//       top: (100vh * ($i - 1));
+//     } @else {
+//       box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
+//       background-color: hsl(200deg * $i, 90%, 40%);
+//       color: #fff;
+//       top: (100vh * ($i - 1));
+//     }
+//     z-index: ($i);
+//     .fixed {
+//       transform: translate(-50%, -50%);
+//     }
+//   }
+// }
+
+// .oop {
+//   position: relative;
+//   z-index: auto;
+//   height: 10px;
+//   background: linear-gradient(141deg, #48ded4 0%, #a026bf 51%, #e82c75 75%);
+// }

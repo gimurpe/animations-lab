@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento&display=swap');
+/*----Variables ----*/
+$white: #fefefe;
+$envelope-color-1: #f6cfca;
+$envelope-color-2: #f4dad7;
+$envelope-color-3: #fbe8e5;
+$envelope-color-4: #ffc8c8;
+$envelope-width: 550px;
+$envelope-height: 280px;
+$envelope-width-mobile: 87vw;
+$envelope-height-mobile: 52vw;
+$paper-width: 500px;
+$paper-height: 240px;
+$paper-width-mobile: 80vw;
+$paper-height-mobile: 36vw;
+$triangle-height: calc(#{$envelope-height} / 2);
+$triangle-width: calc(#{$envelope-width} / 2);
+$triangle-height-mobile: calc(#{$envelope-height-mobile} / 2);
+$triangle-width-mobile: calc(#{$envelope-width-mobile} / 2);
+$paper-border-radius: 3px;
+$bezier: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/*----Abstract Classes ----*/
+%absolute-center {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+%box-1 {
+   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
+}
+%box-2 {
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+/*----Components ----*/
+.flip-envelope {
+   background-color: transparent;
+   width: $envelope-width-mobile;
+   height: $envelope-height-mobile;
+   perspective: 1000px;
+   // &:hover {
+   //    .flip-envelope__design {
+   //       transform: translate(-50%, -50%) rotateY(180deg);
+   //    }
+   //    .flip-envelope__cover {
+   //       transform: rotateY(180deg);
+   //    }
+   // }
+   @media screen and (min-width: 768px) {
+      width: $envelope-width;
+      height: $envelope-height;
+   }
+   &__design {
+      @extend %absolute-center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   }
+   &__envelope {
+      @extend %box-1;
+      background: $envelope-color-1;
+      width: $envelope-width-mobile;
+      height: $envelope-height-mobile;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      &[data-focused='true'] {
+         cursor: pointer;
+
+         .flip-envelope__cover .flip-envelope__cover-top {
+            transform: scaleY(-1);
+            transform-origin: top;
+            z-index: 0;
+         }
+
+         .flip-envelope__paper {
+            transform: translate(-50%, -130%);
+            transition: $bezier;
+         }
+      }
+      @media screen and (min-width: 768px) {
+         width: $envelope-width;
+         height: $envelope-height;
+      }
+   }
+   &__cover {
+      position: relative;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+   }
+   &__cover-top {
+      position: absolute;
+      width: $envelope-width-mobile;
+      z-index: 1;
+      height: calc(#{$envelope-height-mobile} - 90px);
+      max-height: 180px;
+      background: $envelope-color-1;
+      -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      @media screen and (min-width: 768px) {
+         width: $envelope-width;
+         height: calc(#{$envelope-height} - 90px);
+      }
+   }
+
+   &__cover-left {
+      position: absolute;
+      z-index: 1;
+      background: $envelope-color-2;
+      width: $triangle-width-mobile;
+      height: $envelope-height-mobile;
+      left: 0;
+      -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+      clip-path: polygon(0 0, 0 100%, 100% 50%);
+      @media screen and (min-width: 768px) {
+         width: $triangle-width;
+         height: $envelope-height;
+      }
+   }
+
+   &__cover-right {
+      position: absolute;
+      z-index: 1;
+      background: $envelope-color-2;
+      width: $triangle-width-mobile;
+      height: $envelope-height-mobile;
+      right: 0;
+      -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      @media screen and (min-width: 768px) {
+         width: $triangle-width;
+         height: $envelope-height;
+      }
+   }
+
+   &__cover-bottom {
+      position: absolute;
+      width: $envelope-width-mobile;
+      z-index: 1;
+      top: $triangle-height-mobile;
+      height: $triangle-height-mobile;
+      background: $envelope-color-3;
+      -webkit-clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+      clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+      left: 0;
+      right: 0;
+      margin: auto;
+      @media screen and (min-width: 768px) {
+         width: $envelope-width;
+         height: $triangle-height;
+         top: $triangle-height;
+      }
+   }
+   &__paper {
+      @extend %absolute-center, %box-2;
+      width: $paper-width-mobile;
+      height: $paper-height-mobile;
+      background: #ffffff;
+      border-radius: $paper-border-radius;
+      @media screen and (min-width: 768px) {
+         width: $paper-width;
+         height: $paper-height;
+      }
+   }
+   &__message {
+      @extend %absolute-center;
+      top: 42%;
+      font-family: 'Sacramento', cursive;
+      text-align: center;
+      font-size: 7vw;
+      @media screen and (min-width: 768px) {
+         top: 50%;
+         font-size: 36px;
+      }
+   }
+   &__message-destinatary {
+      font-family: 'Sacramento', cursive;
+      position: absolute;
+      left: 5%;
+      top: 10%;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      color: brown;
+      @media screen and (min-width: 768px) {
+         font-size: 15px;
+         letter-spacing: 0.5px;
+      }
+   }
+   &__envelope-back {
+      @extend %box-1;
+      background: $envelope-color-4;
+      width: $envelope-width-mobile;
+      height: $envelope-height-mobile;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      @media screen and (min-width: 768px) {
+         width: $envelope-width;
+         height: $envelope-height;
+      }
+   }
+}
