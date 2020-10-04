@@ -47,11 +47,12 @@ const ReferencesSection = () => (
           Disney's 12 principles of animation
         </a>
       </li>
-      <li className='references-section__reference'></li>
-      <li className='references-section__reference'></li>
-      <li className='references-section__reference'></li>
-      <li className='references-section__reference'></li>
-      <li className='references-section__reference'></li>
+      <li className='references-section__reference'>
+        <a href='https://freefrontend.com/css-animated-backgrounds/'>
+          {' '}
+          Animated Backgrounds
+        </a>
+      </li>
     </ul>
     <ul className='references-section__circles'>
       <li></li>
